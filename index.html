@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <a href="#" class="logo">QUIZ</a>
+
+        <nav class="navbar">
+          <a href="#" class="active">Accueil</a>
+          <a href="about.html">A propos</a>
+          <a href="#">Cours</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <div class="container">
+        <section class="quiz_section">
+          <div class="quizbox">
+            <h1>Test de connaissance</h1>
+            <div class="quiz_header">
+              <span>Questionnaire javascript</span>
+              <span class="header_score">Score: 0 / 5</span>
+            </div>
+            <h2 class="question_text">What does HTML stand for?</h2>
+
+            <div class="option_list">
+              <!-- <div class="option">
+                <span> "A. Hyper Type Multi Language" </span>
+              </div>
+              <div class="option">
+                <span> "B. Hyper Text Multiple Language" </span>
+              </div>
+              <div class="option">
+                <span> "C. Hyper Text Markup Language" </span>
+              </div>
+              <div class="option">
+                <span> ""D. Home Text Multi Language" </span>
+              </div> -->
+            </div>
+
+            <div class="quiz_footer">
+                <span class="question_total">1 of 40 Question</span>
+                <button class="next_btn">Suivant</button>
+            </div>
+          </div>
+          <div class="result_box">
+            <h2>Quiz Result !</h2>
+            <div class="porcentage_container">
+              <div class="circilar_progress">
+                <span class="progress_value">0%</span>
+              </div>
+              <span class="score_text">Your Score 0 out of 5</span>
+            </div>
+            <div class="buttons">
+              <button class="tryagain_btn">Try again</button>
+              <button class="home_btn">Go To Home</button>
+            </div>
+          </div>
+        </section>
+        <section class="home">
+          <div class="home_content">
+            <h1>Quiz Challenge</h1>
+            <p>
+              Vous desirez tester vos connaissances. Plus de souci, quiz Challenge vous propose un QCM adapte pour consolider vos connaissances theorique. N'hesitez pas !!! 
+            </p>
+            <button class="start_btn">Commencer</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="popup_info">
+      <h2>Quiz Guide</h2>
+      <span class="info"
+        >1.Ce jeu a pour but de tester vos connaissances dans un langage specifique.</span
+      >
+      <span class="info">2. Prenez le temps de lire les questions ainsi que les reponses proposes.</span>
+      <span class="info">3. Votre choix est irrevoquable ainsi votre passage a une question.</span>
+      <span class="info">4. Vous avez la possibilite de reprendre le quiz autant de fois que vous voulez.</span>
+      <span class="info"
+        >5. Profiter du quiz pour ameliorer vos connaissnces theorique. Cliquez sur Continue pour commencer</span
+      >
+
+      <div class="btn_group">
+        <button class="info_btn exit_btn">Sortir</button>
+        <a href="#" class="info_btn continue_btn">Continuer</a>
+      </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
