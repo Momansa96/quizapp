@@ -1,0 +1,178 @@
+/* ========================================
+   HOME - Hero section moderne
+   ======================================== */
+.homeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+    width: 100%;
+  padding: var(--spacing-12) var(--spacing-8);
+}
+
+.homeContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.homeContent h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-6);
+  letter-spacing: -0.03em;
+  line-height: var(--line-height-tight);
+}
+
+[data-theme="dark"] .homeContent h1 {
+  text-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+}
+
+.homeContent p {
+  font-size: var(--font-size-xl);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-10);
+  line-height: var(--line-height-relaxed);
+  font-weight: var(--font-weight-normal);
+}
+
+.startBtn {
+    width: fit-content;
+  font-size: var(--font-size-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ========================================
+   INSTRUCTIONS MODAL
+   ======================================== */
+.instructions {
+  color: var(--text-primary);
+}
+
+.instructionItem {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: flex-start;
+  margin-bottom: var(--spacing-5);
+  padding: var(--spacing-4);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid var(--primary-color);
+  transition: all var(--transition-fast);
+}
+
+[data-theme="dark"] .instructionItem {
+  background: rgba(51, 65, 85, 0.3);
+}
+
+.instructionItem:hover {
+  background: var(--bg-tertiary);
+  transform: translateX(4px);
+}
+
+[data-theme="dark"] .instructionItem:hover {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+.instructionNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.instructionItem p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+}
+
+.instructionButtons {
+  display: flex;
+  gap: var(--spacing-3);
+  justify-content: flex-end;
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--border-color);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .homeContent h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  .homeContent p {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+
+  .homeContent h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .homeContent p {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-8);
+  }
+
+  .startBtn {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .instructionButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .instructionButtons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .homeContent h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .homeContent p {
+    font-size: var(--font-size-sm);
+  }
+
+  .instructionItem {
+    flex-direction: column;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3);
+  }
+
+  .instructionNumber {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: var(--font-size-sm);
+  }
+}

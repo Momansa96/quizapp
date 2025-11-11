@@ -1,0 +1,115 @@
+/* ========================================
+   QUESTION DISPLAY - Design moderne
+   ======================================== */
+.questionDisplay {
+  margin-bottom: var(--spacing-8);
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+}
+
+.questionNumber {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  letter-spacing: 0.02em;
+}
+
+.difficulty {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid;
+}
+
+.difficulty.easy {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+[data-theme="dark"] .difficulty.easy {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.difficulty.medium {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+[data-theme="dark"] .difficulty.medium {
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.difficulty.hard {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+[data-theme="dark"] .difficulty.hard {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.questionText {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  line-height: var(--line-height-snug);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .questionText {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .questionDisplay {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .questionText {
+    font-size: var(--font-size-lg);
+  }
+
+  .questionHeader {
+    gap: var(--spacing-2);
+  }
+}
+
+@media (max-width: 640px) {
+  .questionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .questionText {
+    font-size: var(--font-size-base);
+  }
+
+  .questionNumber,
+  .difficulty {
+    font-size: 10px;
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+}

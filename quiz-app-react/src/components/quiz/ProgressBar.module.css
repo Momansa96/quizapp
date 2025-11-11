@@ -1,0 +1,112 @@
+/* ========================================
+   PROGRESS BAR - Design moderne
+   ======================================== */
+.progressContainer {
+  margin-bottom: var(--spacing-8);
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+}
+
+.progressText,
+.scoreText {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+.scoreText {
+  color: var(--primary-color);
+  font-weight: var(--font-weight-semibold);
+  background: rgba(37, 99, 235, 0.1);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--primary-color);
+}
+
+[data-theme="dark"] .scoreText {
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.progressBarTrack {
+  height: 10px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-inner);
+}
+
+[data-theme="dark"] .progressBarTrack {
+  background: rgba(51, 65, 85, 0.5);
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: var(--radius-full);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: var(--spacing-2);
+  position: relative;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+}
+
+.progressPercentage {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.progressBarFill:hover .progressPercentage {
+  opacity: 1;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .progressContainer {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .progressInfo {
+    gap: var(--spacing-2);
+  }
+
+  .progressText,
+  .scoreText {
+    font-size: var(--font-size-xs);
+  }
+
+  .scoreText {
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+
+  .progressBarTrack {
+    height: 8px;
+  }
+
+  .progressPercentage {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .progressInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+  }
+}

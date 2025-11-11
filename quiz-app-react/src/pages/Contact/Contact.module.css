@@ -1,0 +1,112 @@
+/* ========================================
+   CONTACT - Page moderne
+   ======================================== */
+.contactContainer {
+  padding: var(--spacing-12) 0;
+  min-height: calc(100vh - 100px);
+}
+
+.pageTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-8) 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.contactContent {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactContent p {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--spacing-6) 0;
+}
+
+.contactMethods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-8);
+}
+
+.contactCard {
+  padding: var(--spacing-6);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+[data-theme="dark"] .contactCard {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.contactCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.contactIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+  color: var(--primary-color);
+}
+
+.contactLabel {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.contactValue {
+  font-size: var(--font-size-base);
+  color: var(--primary-color);
+  margin: 0;
+  word-break: break-all;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .contactContainer {
+    padding: var(--spacing-8) 0;
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .contactContent p {
+    font-size: var(--font-size-base);
+  }
+
+  .contactMethods {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .pageTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .contactCard {
+    padding: var(--spacing-4);
+  }
+
+  .contactIcon {
+    font-size: 2.5rem;
+  }
+}

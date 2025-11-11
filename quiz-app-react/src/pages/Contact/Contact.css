@@ -1,0 +1,16 @@
+.contact-container {
+  padding: var(--spacing-3xl) 0;
+  min-height: calc(100vh - 120px);
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.contact-content p {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+}

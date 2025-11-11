@@ -1,0 +1,174 @@
+/* ========================================
+   OPTIONS LIST - Design moderne interactif
+   ======================================== */
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  text-align: left;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .option {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.option.selectable:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--primary-color);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .option.selectable:hover {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.option.selected {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  transform: translateX(4px);
+}
+
+[data-theme="dark"] .option.selected {
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.option.correct {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--success-color);
+  animation: correctPulse 0.5s ease;
+}
+
+[data-theme="dark"] .option.correct {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.option.incorrect {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: var(--error-color);
+  animation: shake 0.5s ease;
+}
+
+[data-theme="dark"] .option.incorrect {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.option.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.optionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  background: var(--bg-secondary);
+  padding: var(--spacing-1);
+}
+
+.option.correct .optionIcon {
+  color: var(--success-color);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.option.incorrect .optionIcon {
+  color: var(--error-color);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.option.selected .optionIcon {
+  color: var(--primary-color);
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.optionText {
+  flex: 1;
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes correctPulse {
+  0%, 100% {
+    transform: scale(1) translateX(0);
+  }
+  50% {
+    transform: scale(1.02) translateX(4px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .optionsList {
+    gap: var(--spacing-2);
+  }
+
+  .option {
+    padding: var(--spacing-3);
+    font-size: var(--font-size-sm);
+    gap: var(--spacing-2);
+  }
+
+  .option.selectable:hover,
+  .option.selected {
+    transform: translateX(2px);
+  }
+
+  .optionIcon {
+    min-width: 18px;
+    height: 18px;
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 640px) {
+  .option {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-md);
+  }
+
+  .optionText {
+    font-size: var(--font-size-sm);
+  }
+}
